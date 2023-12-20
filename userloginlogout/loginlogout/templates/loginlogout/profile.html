@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block title %} 
+Profile
+{% endblock %}
+
+{% block content %}
+<h1>Hello {{user}}</h1>
+
+<a href="{% url 'change_password' %}" class="btn btn-warning">Change Password With Old</a>
+<a href="{% url 'change_password_without' %}" class="btn btn-warning">Change Password Without Old</a>
+
+{% endblock %}
