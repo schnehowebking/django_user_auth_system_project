@@ -99,7 +99,7 @@ def fix_script(path: str) -> bool:
     assert os.path.isfile(path)
 
     with open(path, "rb") as script:
-        firstline = script.readline()
+        firstline = script.readline(5_000_000)
         if not firstline.startswith(b"#!python"):
             return False
         exename = sys.executable.encode(sys.getfilesystemencoding())
